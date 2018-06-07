@@ -1,81 +1,70 @@
 # Cifra-de-cesar
 
-function caesarCipher (n) {
-
-var phrase = prompt ("Digite uma frase para ser criptografada:");
-
-  if (phrase !== '' && isNaN(phrase)) {
-    // return 'ok';
-
-alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-indices  0 a 25 / circulo entre 65 e 90
-
-módulo 26 a partir do T para dar a volta (T = 84 (Ascii) - 65 = 19 + 7 = 26 %26 = 0)
-(formula = x - 65 + 7 % 26 + 65)
-
-indice (a partir do 65) subtrai 65 depois soma 7 = letra pra frente  (usar a formula do video)
+*CIFRA DE CÉSAR - CRIPTOGRAFIA E DESCRIPTOGRAFIA*
 
 
-Exemplo: ABACATE
-transformar em um array ['A', 'B', 'A', 'C', 'A', 'T', 'E']
-pegar os numeros correspondentes a tabela Ascii (65, 66, 65, 67, 65, 84, 69)
+**VARIÁVEIS:**
 
-usar a formula x - 65 (onde vai transformar para indice de 0 a 25) e soma 7 , depois modulo 26
+phrase: recebe a frase digitada pelo usuário para ser criptografada/descriptografada
+option: recebe o número com a opção que o usuário deseja efetuar (1 - Criptografar OU 2 - Descriptografar)
+numbers: string utilizada na validação da entrada do usuário, para bloquear frases que contenham números
+character: variável auxiliar para guardar o número correspondente da tabela ASCII para cada letra
+encrypted: string com as letras criptografadas
+decrypted: string com as letras descriptografadas
 
-(x - 65 + 7) % 26 + 65
-
-MINUSCULA:
-toUpperCase
-e compara com o que tinha antes,
-se for igual é maiusculo, senao é minusculo
-
-if x.toUpperCase() === x
- formula do 65
-
- else 
- formula do 97
+**FUNÇÕES:**
+caesarCipher: função principal para criptografia/descriptografia
+cipher: função para criptografia
+decipher: função para descriptografia
 
 
-DESCRIPTOGRAFAR
+INÍCIO
 
-formula inversa (se atentar como vai fazer o contrario do modulo)
+Solicita ao usuário a digitação de uma FRASE
 
-ESPAÇO
-se tiver espaço, converte para espaço e desconverte para espaço OU bloqueia
+Efetua validação de entrada: o usuário não deve ser capaz de inserir um campo vazio ou que contenha números
 
+Solicita ao usuário selecionar qual opção deseja realizar (1 - Criptografar OU 2 - Descriptografar)
 
-
-    phrase.charCodeAt(0); (criptografa)
-
-
-    phrase.fromCharCode(0); (descriptografa)
+Se selecionar 1, chama a função para Criptografia, se selecionar 2, chama a função para Descriptografia
 
 
-  } return alert ('Digite uma frase utilizando letras');
-}
+**Função para Criptografia**:
 
-caesarCipher(33);
+Cria váriável "character" tipo String em branco
 
+Executa método para identificar o número correspondente da tabela ASCII para cada letra e guarda na variável
 
+Se a frase estiver em letras Maiúsculas, aplica a fórmula para criptografia das letras maiúsculas
 
+Senão, considera-se que a frase está em letras Minúsculas e aplica a fórmula para criptografia das letras minúsculas
 
+Exibe a frase Criptografada 
 
-// function cipher () {
+Fórmula criptografia para letras maiúsculas: ((character - 65 + 7) % 26 + 65)
 
-// (x - n) % 26
-
-
-// }
-
-
+Fórmula criptografia para letras minúsculas: ((character - 97 + 7) % 26 + 97)
 
 
+**Função para Descriptografia**: 
 
-// function decipher () {
+Cria váriável "character" tipo String em branco
 
-// }
+Executa método para identificar o número correspondente da tabela ASCII para cada letra e guarda na variável
+
+Se a frase estiver em letras Maiúsculas, aplica a fórmula para criptografia das letras maiúsculas
+
+Senão, considera-se que a frase está em letras Minúsculas e aplica a fórmula para criptografia das letras minúsculas
+
+Exibe a frase Descriptografada 
+
+Fórmula descriptografia para letras maiúsculas: ((character - 65 - 7 + 26) % 26 + 65)
+
+Fórmula descriptografia para letras minúsculas: ((character - 97 - 7 + 26) % 26 + 97)
 
 
-// } else {
-//   return "Digite apenas letras."
-// }
+FIM
+
+
+***FLUXOGRAMA***
+![Fluxograma Cifra de César](https://github.com/amcravila/Cartao-de-credito/blob/master/Fluxograma-Cifra-de-Cesar.PNG)
