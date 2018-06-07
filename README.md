@@ -6,15 +6,24 @@
 **VARIÁVEIS:**
 
 phrase: recebe a frase digitada pelo usuário para ser criptografada/descriptografada
+
 option: recebe o número com a opção que o usuário deseja efetuar (1 - Criptografar OU 2 - Descriptografar)
+
 numbers: string utilizada na validação da entrada do usuário, para bloquear frases que contenham números
+
 character: variável auxiliar para guardar o número correspondente da tabela ASCII para cada letra
+
 encrypted: string com as letras criptografadas
+
 decrypted: string com as letras descriptografadas
 
+
 **FUNÇÕES:**
+
 caesarCipher: função principal para criptografia/descriptografia
+
 cipher: função para criptografia
+
 decipher: função para descriptografia
 
 
@@ -67,4 +76,4 @@ FIM
 
 
 ***FLUXOGRAMA***
-![Fluxograma Cifra de César](https://github.com/amcravila/Cartao-de-credito/blob/master/Fluxograma-Cifra-de-Cesar.PNG)
+![Fluxograma Cifra de César](https://github.com/amcravila/Cifra-de-cesar/blob/master/Fluxograma-Cifra-de-Cesar.png)
